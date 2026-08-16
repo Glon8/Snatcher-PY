@@ -5,6 +5,7 @@ import platform
 from rich.console import Console
 
 from .values import op, _SEPERATOR
+from .helpers import unicode_convert
 
 console = Console()
 
@@ -18,24 +19,20 @@ def render():
 
     general = op['general']
 
-    pos = 'on' if general['display'] == 'plain' else chr(0x2705)
-    neg = 'off' if general['display'] == 'plain' else chr(0x274C)
+    pos = 'on' if general['display'] == 'plain' else unicode_convert(general[".positive_emoji"])
+    neg = 'off' if general['display'] == 'plain' else unicode_convert(general[".negative_emoji"])
 
     for key, values in op.items():
         for att, stat in values.items():
-            if att == 'name':
-                console.print(_SEPERATOR + ' ' + str(stat))
-            elif att == 'key_action' or att == 'key_trigger' or att == 'text' or att == 'path_from' or att == 'path_to' or att == 'note' or att == 'display' or att == 'dir_files':
-                console.print(f"{att} : {stat}")
-            elif att == 'count':
-                console.print(f"{att} : {int(stat)} clicks")
-            elif att == 'time':
-                time_seconds = stat % 60
-                console.print(f"{att} : {int((stat - time_seconds) / 60)} minutes {int(time_seconds)} seconds")
-            elif att == 'backup_time':
-                if stat == -1:
-                    console.print(f"{att} : {stat}")
-                else:
-                    console.print(f"{att} : {time.ctime(stat)}")
-            else:
-                console.print(f"{att} : {pos if stat else neg}")
+            if not att.startswith('.'):
+               if att == 'name':
+                   console.print(_SEPERATOR + ' ' + str(stat))
+               elif att == 'key_action' or att == 'key_trigger' or att == 'path_from' or att == 'path_to' or att == 'note' or att == 'display' or att == 'dir_files':
+                   console.print(f"{att} : {stat}")
+               elif att == 'backup_time':
+                   if stat == -1:
+                       console.print(f"{att} : {stat}")
+                   else:
+                       console.print(f"{att} : {time.ctime(stat)}")
+               else:
+                   console.print(f"{att} : {pos if stat else neg}")

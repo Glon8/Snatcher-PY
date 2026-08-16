@@ -79,3 +79,8 @@ def config_parse(string):
         for key, val in value.items():
             if key != 'name':
                 op[name][key] = val
+
+# ===================================< UNICODE CONVERT
+
+def unicode_convert(unicode):
+    return chr(int(unicode[2:], 16))
