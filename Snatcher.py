@@ -27,6 +27,9 @@ def main():
     if not isinstance(snt['path_to'], str) or not os.path.exists(snt['path_to']):
         snt['path_to'] = os.path.join(getDir(), 'stash')
 
+        if not os.path.exists(snt['path_to']):
+            os.mkdir(snt['path_to'])
+
         write_file(getDir(), 'config.json', op)
 
     # \/===================================< HOTKEYS SETTINGS
