@@ -31,9 +31,9 @@ pip install pynput rich
 1. Download the project files.
 2. Build the program with **PyInstaller**.
 3. Run the program for the first time. A `config.json` file will be created.
-4. Stop the program and open `config.json`.
+4. Open `config.json` (Make sure Kill Switch status is OFF).
 5. Configure `path_from` and `path_to` according to your needs.
-6. Restart the program.
+6. Enable the Kill Switch and ONLY THEN the Santcher, as you need (using bindings).
 
 ## Configuration
 
@@ -54,7 +54,7 @@ The `config.json` file contains the following settings:
 
 `self_replace` is disabled by default.
 
-When enabled, Snatcher is allowed to replace files in the source directory. This option should be used carefully, as it can overwrite the original files.
+When enabled, Snatcher is allowed to replace the source directory. This option should be used carefully, as it can overwrite the original files.
 
 ## Project Status
 
