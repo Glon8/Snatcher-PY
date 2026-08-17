@@ -1,5 +1,5 @@
-build
-dist
-Snatcher.spec
-stash
-config.json
+/build/
+/dist/
+/stash/
+/Snatcher.spec
+/config.json
