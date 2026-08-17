@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 
 from pathlib import Path
@@ -20,6 +21,9 @@ def files_count(file_path):
 
 # ===================================< GET DIRECTORY
 def getDir():
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(os.path.abspath(sys.executable))
+
     return str(Path(__file__).resolve().parent.parent)
 
 
