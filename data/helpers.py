@@ -93,7 +93,8 @@ def config_parse_reread(string):
 
     config_pack = json.loads(string)
 
-    valid_keys = ['display','.positive_emoji', '.negative_emoji', 'key_trigger', 'path_from', 'path_to', 'self_replace']
+    valid_keys = ['display', '.positive_emoji', '.negative_emoji', 'key_trigger', 'path_from', 'path_to',
+                  'self_replace']
 
     for name, value in config_pack.items():
         for key, val in value.items():

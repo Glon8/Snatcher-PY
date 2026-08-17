@@ -25,14 +25,14 @@ def render():
     for key, values in op.items():
         for att, stat in values.items():
             if not att.startswith('.'):
-               if att == 'name':
-                   console.print(_SEPERATOR + ' ' + str(stat))
-               elif att == 'key_action' or att == 'key_trigger' or att == 'path_from' or att == 'path_to' or att == 'note' or att == 'display' or att == 'dir_files':
-                   console.print(f"{att} : {stat}")
-               elif att == 'backup_time':
-                   if stat == -1:
-                       console.print(f"{att} : {stat}")
-                   else:
-                       console.print(f"{att} : {time.ctime(stat)}")
-               else:
-                   console.print(f"{att} : {pos if stat else neg}")
+                if att == 'name':
+                    console.print(_SEPERATOR + ' ' + str(stat))
+                elif att == 'key_trigger' or att == 'path_from' or att == 'path_to' or att == 'note' or att == 'display' or att == 'dir_files':
+                    console.print(f"{att} : {stat}")
+                elif att == 'backup_time':
+                    if stat == -1:
+                        console.print(f"{att} : {stat}")
+                    else:
+                        console.print(f"{att} : {time.ctime(stat)}")
+                else:
+                    console.print(f"{att} : {pos if stat else neg}")
