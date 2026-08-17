@@ -43,8 +43,6 @@ def read_file(file_path):
         with open(file_path, 'r') as file:
             return file.read().strip()
     except FileNotFoundError:
-        write_file(getDir(), 'config.json', op)
-
         return None
 
 
@@ -75,6 +73,7 @@ def dir_mtime(folder_path):
 # string - to pars in to config
 def config_parse(string):
     if string == '' or string is None:
+        write_file(getDir(), 'config.json', op)
         return
 
     config_pack = json.loads(string)
