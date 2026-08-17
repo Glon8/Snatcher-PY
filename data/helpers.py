@@ -84,6 +84,23 @@ def config_parse(string):
             if key != 'name':
                 op[name][key] = val
 
+
+# ===================================< CONFIG PARSER ON REREAD
+# string - to pars in to config
+def config_parse_reread(string):
+    if string == '' or string is None:
+        return
+
+    config_pack = json.loads(string)
+
+    valid_keys = ['display','.positive_emoji', '.negative_emoji', 'key_trigger', 'path_from', 'path_to', 'self_replace']
+
+    for name, value in config_pack.items():
+        for key, val in value.items():
+            if key in valid_keys and op[name][key] != val:
+                op[name][key] = val
+
+
 # ===================================< UNICODE CONVERT
 
 def unicode_convert(unicode):
