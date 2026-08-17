@@ -9,10 +9,10 @@ from .visuals import render
 
 # ===================================< SAVES SNATCHER
 def snt_switch():
-    ks = op['kill switch']['stat']
-    snt = op['snatcher']
+    ks = op['ks']['stat']
+    snt = op['snt']
 
-    switch(op['snatcher'], 'stat')
+    switch(op['snt'], 'stat')
 
     if ks:
         if snt['stat'] and snt['backup_time'] == -1 and snt['dir_files'] == 0:
@@ -30,7 +30,7 @@ def snt_switch():
 
 
 def snt_prot():
-    snt = op['snatcher']
+    snt = op['snt']
 
     if snt['stat']:
         p_from = snt['path_from']

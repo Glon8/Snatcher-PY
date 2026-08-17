@@ -17,7 +17,7 @@ def render():
     else:
         os.system('clear')
 
-    general = op['general']
+    general = op['gnr']
 
     pos = 'on' if general['display'] == 'plain' else unicode_convert(general[".positive_emoji"])
     neg = 'off' if general['display'] == 'plain' else unicode_convert(general[".negative_emoji"])

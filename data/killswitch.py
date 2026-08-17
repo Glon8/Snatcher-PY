@@ -5,8 +5,8 @@ from .visuals import render
 
 # ===================================< KILL SWITCH
 def ks_switch():
-    op['snatcher']['stat'] = 0
+    op['snt']['stat'] = 0
 
-    switch(op['kill switch'], 'stat')
+    switch(op['ks'], 'stat')
 
     render()

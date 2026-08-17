@@ -1,17 +1,17 @@
 _OPERATIONS = {
-    'general': {
+    'gnr': {
         'name': 'General',
         'note': "display is either 'emoji' or 'plain'",
         'display': 'plain',
         '.positive_emoji': "U+2705",
         '.negative_emoji': "U+274C"
     },
-    'kill switch': {
+    'ks': {
         'name': 'Kill Switch',
         'key_trigger': 'c+0',
         'stat': 0,
     },
-    'snatcher': {
+    'snt': {
         'name': 'Snatcher',
         'key_trigger': 'c+4',
         'path_from': '',

@@ -14,7 +14,7 @@ k = K()
 # ===================================< CONTROL PANNEL
 def control_panel():
     while True:
-        if op['kill switch']['stat']:
+        if op['ks']['stat']:
             snt_prot()
 
 
@@ -22,7 +22,7 @@ def control_panel():
 def main():
     config_parse(read_file('config.json'))
 
-    snt = op['snatcher']
+    snt = op['snt']
 
     if not isinstance(snt['path_to'], str) or not os.path.exists(snt['path_to']):
         snt['path_to'] = os.path.join(getDir(), 'stash')
@@ -34,7 +34,7 @@ def main():
 
     # \/===================================< HOTKEYS SETTINGS
     hotkeys = [
-        HotKey(HotKey.parse(op['kill switch']['key_trigger']), ks_switch),
+        HotKey(HotKey.parse(op['ks']['key_trigger']), ks_switch),
         HotKey(HotKey.parse(snt['key_trigger']), snt_switch),
     ]
 
