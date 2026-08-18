@@ -46,7 +46,7 @@ def read_file(file_path):
         return None
 
 
-# ===================================< PATH MTIME
+# ===================================< PATH MTIME (snt)
 # folder_path - to check mtime for
 def dir_mtime(folder_path):
     newest = 0
