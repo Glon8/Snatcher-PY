@@ -27,7 +27,14 @@ def render():
             if not att.startswith('.'):
                 if att == 'name':
                     console.print(_SEPERATOR + ' ' + str(stat))
-                elif att == 'key_trigger' or att == 'path_from' or att == 'path_to' or att == 'note' or att == 'display' or att == 'dir_files':
+                elif (att == 'key_trigger' or
+                      att == 'path_from' or
+                      att == 'path_to' or
+                      att == 'note' or
+                      att == 'display' or
+                      att == 'dir_files' or
+                      att == 'key_display_change' or
+                      att == 'key_self_replace'):
                     console.print(f"{att} : {stat}")
                 elif att == 'backup_time':
                     if stat == -1:

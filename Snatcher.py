@@ -5,6 +5,8 @@ from data.values import op
 from data.snatcher import snt_prot, snt_switch
 from data.visuals import render
 from data.killswitch import ks_switch
+from data.display import display_switch
+from data.replace import replace_switch
 
 from pynput.keyboard import Controller as K, Listener as kL, HotKey
 
@@ -34,8 +36,10 @@ def main():
 
     # \/===================================< HOTKEYS SETTINGS
     hotkeys = [
+        HotKey(HotKey.parse(op['gnr']['key_display_change']), display_switch),
         HotKey(HotKey.parse(op['ks']['key_trigger']), ks_switch),
         HotKey(HotKey.parse(snt['key_trigger']), snt_switch),
+        HotKey(HotKey.parse(snt['key_self_replace']), replace_switch),
     ]
 
     def on_press(key):

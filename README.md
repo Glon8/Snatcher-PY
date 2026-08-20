@@ -39,15 +39,15 @@ pip install pynput rich
 
 The `config.json` file contains the following settings:
 
-| Setting        | Description                                                                                                                                               |
-| -------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `display`      | Controls whether the interface uses emojis or plain text.                                                                                                 |
-|       `.positive_emoji`         | Defines the emoji for a positive - ON option.                                                                                                             |
-|         `.negative_emoji`       | Defines the emoji for a negative - OFF option.                                                                                                            |
-| `key_trigger`  | Configures the activation key bindings. Using at least two keys together is recommended to prevent accidental activation. Special keys are not supported. |
-| `path_from`    | The source directory that Snatcher monitors.                                                                                                              |
-| `path_to`      | The destination directory where files are copied and restored from when needed.                                                                           |
-| `self_replace` | Enables or disables replacement of files in the source directory. Accepts `1` (enabled) or `0` (disabled). Disabled by default.                           |
+| Setting           | Description                                                                                                                                               |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `display`         | Controls whether the interface uses emojis or plain text.                                                                                                 |
+| `.positive_emoji` | Defines the emoji for a positive - ON option.                                                                                                             |
+| `.negative_emoji` | Defines the emoji for a negative - OFF option.                                                                                                            |
+| `key_[...]`       | Configures the activation key bindings. Using at least two keys together is recommended to prevent accidental activation. Special keys are not supported. |
+| `path_from`       | The source directory that Snatcher monitors.                                                                                                              |
+| `path_to`         | The destination directory where files are copied and restored from when needed.                                                                           |
+| `self_replace`    | Enables or disables replacement of files in the source directory. Accepts `1` (enabled) or `0` (disabled). Disabled by default.                           |
  
 
 ### `self_replace`
